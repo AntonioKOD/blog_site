@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <nav class="space-x-6 text-center  border-b-4 border-blue-400 text-xl space-y-6"> 
+    {{#if logged_in}}
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <button id="logout">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+    </nav>
+  <main>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+</body>
+<script src="/js/logout.js"></script>
+</html>

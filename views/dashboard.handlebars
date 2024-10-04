@@ -1,0 +1,13 @@
+<div>
+    <div class="flex relative mt-4">
+        <button class="bg-blue-500 border-4 border-blue-600 rounded-lg p-2 mx-auto"><a href="/newpost">New Post</a></button>
+    </div>
+    {{#each posts as |post|}}
+    <div class="border-4 border-blue-200 space-x-72 mt-4 mx-4 rounded-lg bg-blue-300 flex">
+        <a href="/updatePost/{{post.id}}">
+        <h1>{{post.title}}</h1>
+        <p>Posted by: {{post.user.name}} on {{format_date post.created_at}}</p>
+        </a>
+    </div>
+    {{/each}}
+</div>

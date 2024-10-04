@@ -1,0 +1,28 @@
+<div>
+<div class="border-4 border-blue-400 mt-8 relative rounded-lg mx-12">
+    <div class="bg-blue-300 flex space-x-6">
+    <h1 class="bg-blue-300 text-xl mx-4">{{post.title}}</h1>
+    <p class="px-36 text-sm">Posted by {{post.user.name}} on {{format_date post.created_at}}</p>
+    </div>
+    <div class="mt-4 mx-4 text-center mb-4 text-lg">{{post.text_post}}</div>
+</div>
+    <div> 
+        <form class="mt-8 mx-12 border-4 border-blue-500 rounded-lg p-12" id="comment-form">
+            <label for="comment" class="flex mb-5">Comment</label>
+            <textarea id="comment" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Add a comment"></textarea>
+             <button type="submit" class="bg-blue-400 border border-blue-500 rounded-lg p-2 mx-auto mt-4">Submit</button>
+        </form>
+    </div>
+
+    <div>
+        {{#each comments}}
+        <div class="border-4 border-blue-400 relative mx-12 mt-8 rounded-lg">
+        <p class="text-xl">{{content}}</p>
+        <p>-{{user.name}}</p>
+        <p>{{format_date created_at}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/js/comment.js"></script>
